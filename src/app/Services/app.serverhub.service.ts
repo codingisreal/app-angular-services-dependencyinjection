@@ -26,12 +26,12 @@ export class ServerHub implements OnInit {
   }
 
   clearDead() {
-    this.servers.forEach(function(value, index) {
-      console.log(index);
+    this.servers.forEach(function(value, index, obj) {
       if (value.validity > 0) {
         value.validity = value.validity - 1;
+      } else {
+        obj.splice(index, 1);
       }
-      //this.servers = this.servers.splice(index, 1);
     });
   }
 }
