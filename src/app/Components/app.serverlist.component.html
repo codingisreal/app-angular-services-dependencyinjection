@@ -1,3 +1,11 @@
 <ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item" *ngFor="let server of serverHub.servers">
+    <h4>
+      {{server.name}}
+      <span class="badge badge-secondary">{{server.validity}}s</span>
+    </h4>
+  </li>
+  <li class="list-group-item active" *ngIf="serverHub.servers.length == 0">
+    {{serverHub.noServerNotify}}
+  </li>
 </ul>

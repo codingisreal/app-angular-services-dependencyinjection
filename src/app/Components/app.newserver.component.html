@@ -4,7 +4,8 @@
     type="text"
     class="form-control"
     id="txtServerName"
-    placeholder="First word that comes in your mind"
+    placeholder="First word that comes to your mind"
+    [(ngModel)]="serverName"
   />
 </div>
 <div class="form-group">
@@ -13,7 +14,8 @@
     type="text"
     class="form-control"
     id="txtServerValidity"
-    placeholder="Validity in milliseconds"
+    placeholder="Validity in seconds"
+    [(ngModel)]="serverValidity"
   />
 </div>
-<button type="submit" class="btn btn-primary">Add</button>
+<button type="submit" class="btn btn-primary" (click)="addServer()">Add</button>
